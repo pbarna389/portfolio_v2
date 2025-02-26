@@ -12,7 +12,13 @@ dist
 dist-ssr
 *.local
 .husky/*
-
+.eslintrc
+.eslintrc.json
+.eslintrc.js
+.eslintrc.yaml
+.eslintrc.yml
+eslint.json
+eslint.config.js
 
 # Editor directories and files
 .env
