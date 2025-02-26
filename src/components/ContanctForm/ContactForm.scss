@@ -1,0 +1,134 @@
+$desk-width: 20rem;
+$desk-padding: 0.5rem;
+$bg-shadow-color: rgb(13, 13, 13);
+
+$desk-font-size: 1.3rem;
+
+$phone-width: 320px;
+$phone-button: 362px;
+$tablet-width: 640px;
+$tablet-contact-width-max: 1010px;
+$desktop-width: 1280px;
+
+@mixin phones {
+    @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin phonesButton {
+    @media (min-width: #{$phone-width}) and (max-width: #{$phone-button}) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin tabletContact {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-contact-width-max}) {
+        @content;
+    }
+}
+
+@mixin desktops {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+
+    @include phones {
+        flex-direction: column-reverse;
+        gap: 5rem;
+    }
+
+    @include tablets {
+        gap: 5rem;
+    }
+
+    @include tabletContact{
+        flex-direction: column-reverse;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        translate: -800px;
+        opacity: 0;
+        filter: blur(10px);
+        transition: all 0.7s ease-in;
+
+        @include phones {
+            width: $phone-width;
+        }
+
+        input, textarea {
+            width: $desk-width;
+            padding: $desk-padding;
+            border: 1px solid black;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            font-size:1.1rem;
+            
+            &:focus {
+                border: 3px solid black;
+                font-size: 1.2rem;
+            }
+
+            @include phones {
+                width: $phone-width * 0.8;
+            }
+        }
+
+        input {
+            height: 1.5rem;
+        }
+
+        textarea {
+            resize: none;
+            height: 10rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-btn {
+            margin-top: 1rem;
+            width: $desk-width + 2rem;
+
+            @include phones {
+                width: $phone-width - 20px;
+            }
+        }
+    }
+
+    .contact-text {
+        width: $desk-width;
+        font-size: $desk-font-size;
+        translate: 300px;
+        filter: blur(10px);
+        opacity: 0;
+        transition: all 0.7s ease-in;
+
+        @include phones {
+            font-size: $desk-font-size * 0.6;
+            width: $phone-width;
+            translate: 0;
+        }
+
+        @include tablets {
+            translate: 0px;
+            font-size: $desk-font-size * 0.8;
+        }
+
+    };
+};

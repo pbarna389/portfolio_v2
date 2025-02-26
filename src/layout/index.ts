@@ -1,0 +1,6 @@
+export { Contact } from './Contact'
+export { Introduction } from './Introduction'
+export { Footer } from './Footer'
+export { Navbar } from './Navbar'
+export { Projects } from './Projects'
+export { Skills } from './Skills'

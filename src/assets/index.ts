@@ -1,0 +1,6 @@
+export { ReactComponent as Css3 } from '../assets/SVG/CSS3.svg'
+export { ReactComponent as Html5 } from '../assets/SVG/HTML5.svg'
+export { ReactComponent as Js } from '../assets/SVG/JS.svg'
+export { ReactComponent as ReactLogo } from '../assets/SVG/React.svg'
+export { ReactComponent as Sass } from '../assets/SVG/Sass.svg'
+export { ReactComponent as Ts } from '../assets/SVG/TS.svg'
