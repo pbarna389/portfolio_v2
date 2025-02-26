@@ -36,6 +36,7 @@ export default tseslint
 				...reactHooks.configs.recommended.rules,
 				'sort-imports': ['error', { ignoreCase: true, ignoreDeclarationSort: true }],
 				'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+				'no-multiple-empty-lines': 'error',
 				'@typescript-eslint/no-throw-literal': 0,
 				'@typescript-eslint/adjacent-overload-signatures': 'error',
 				'@typescript-eslint/no-unused-vars': 'warn',
@@ -375,12 +376,8 @@ export default tseslint
 								position: 'after'
 							}
 						],
-						pathGroupsExcludedImportTypes: ['react'],
-						'newlines-between': 'always',
-						alphabetize: {
-							order: 'asc',
-							caseInsensitive: true
-						},
+						'newlines-between': 'always-and-inside-groups',
+						warnOnUnassignedImports: true,
 						groups: [
 							'builtin',
 							'index',
