@@ -126,96 +126,79 @@ export default tseslint
 						pathGroups: [
 							{
 								pattern: 'react',
-								group: 'builtin',
-								position: 'before'
-							},
-							{
-								pattern: 'react-icons/*',
-								group: 'builtin',
-								position: 'before'
-							},
-							{
-								pattern: '@storybook',
-								group: 'builtin',
-								position: 'before'
-							},
-							{
-								pattern: '@storybook/*',
-								group: 'builtin',
-								position: 'before'
-							},
-							{
-								pattern: '@assets/*',
-								group: 'builtin',
-								position: 'before'
+								group: 'builtin'
 							},
 							{
 								pattern: 'react-dom',
-								group: 'builtin',
-								position: 'before'
+								group: 'builtin'
 							},
 							{
 								pattern: 'react-dom/client',
-								group: 'builtin',
-								position: 'before'
+								group: 'builtin'
+							},
+							{
+								pattern: 'react-router',
+								group: 'builtin'
 							},
 							{
 								pattern: 'react-router-dom',
 								group: 'builtin'
 							},
 							{
-								pattern: 'react-*',
-								group: 'builtin',
-								position: 'before'
-							},
-							{
 								pattern: '@reduxjs/toolkit*',
 								group: 'builtin',
-								position: 'before'
+								position: 'after'
 							},
 							{
 								pattern: '@tanstack/react-query*',
 								group: 'builtin',
-								position: 'before'
-							},
-							{
-								pattern: '@react-oauth/google',
-								group: 'builtin'
-							},
-							{
-								pattern: 'react-icons',
-								group: 'builtin'
-							},
-							{
-								pattern: 'swiper/react',
-								group: 'builtin'
+								position: 'after'
 							},
 							{
 								pattern: 'styled-components',
-								group: 'builtin',
-								position: 'after'
+								group: 'external',
+								position: 'before'
+							},
+							{
+								pattern: '@react-oauth/*',
+								group: 'external'
 							},
 							{
 								pattern: 'react-hook-form',
-								group: 'internal',
-								position: 'after'
+								group: 'external'
 							},
 							{
 								pattern: 'formik',
-								group: 'internal',
+								group: 'external'
+							},
+							{
+								pattern: 'swiper/*',
+								group: 'external'
+							},
+							{
+								pattern: 'react-*',
+								group: 'external',
 								position: 'after'
 							},
 							{
 								pattern: '@query*',
-								group: 'internal'
+								group: 'internal',
+								position: 'before'
+							},
+							{
+								pattern: '@query/*',
+								group: 'internal',
+								position: 'before'
 							},
 							{
 								pattern: '@store',
-								group: 'internal'
+								group: 'internal',
+								position: 'before'
 							},
 							{
-								pattern: '@store/**',
-								group: 'internal'
+								pattern: '@store/*',
+								group: 'internal',
+								position: 'before'
 							},
 							{
 								pattern: '@slices',
@@ -226,47 +209,11 @@ export default tseslint
 								group: 'internal'
 							},
 							{
+								pattern: '@context',
+								group: 'internal'
+							},
+							{
 								pattern: '@context/**',
-								group: 'internal'
-							},
-							{
-								pattern: '~/components/**',
-								group: 'internal'
-							},
-							{
-								pattern: '@components/**',
-								group: 'internal'
-							},
-							{
-								pattern: '@pages/**',
-								group: 'internal'
-							},
-							{
-								pattern: '~/pages/**',
-								group: 'internal'
-							},
-							{
-								pattern: '@helpers/**',
-								group: 'internal'
-							},
-							{
-								pattern: '~/helpers/**',
-								group: 'internal'
-							},
-							{
-								pattern: '@hooks/**',
-								group: 'internal'
-							},
-							{
-								pattern: '~/hooks',
-								group: 'internal'
-							},
-							{
-								pattern: '@utils/**',
-								group: 'internal'
-							},
-							{
-								pattern: '~/utils/**',
 								group: 'internal'
 							},
 							{
@@ -278,17 +225,52 @@ export default tseslint
 								group: 'internal'
 							},
 							{
+								pattern: '@components',
+								group: 'internal'
+							},
+							{
+								pattern: '@components/**',
+								group: 'internal'
+							},
+							{
+								pattern: '@/pages',
+								group: 'internal'
+							},
+							{
+								pattern: '@/pages/**',
+								group: 'internal'
+							},
+							{
+								pattern: '@hooks',
+								group: 'internal'
+							},
+							{
+								pattern: '@hooks/**',
+								group: 'internal'
+							},
+							{
+								pattern: '@helpers',
+								group: 'internal'
+							},
+							{
+								pattern: '@helpers/**',
+								group: 'internal'
+							},
+							{
+								pattern: '@utils',
+								group: 'internal'
+							},
+							{
+								pattern: '@utils/**',
+								group: 'internal'
+							},
+							{
+								pattern: '@constants',
+								group: 'internal'
+							},
+							{
 								pattern: '@constants/**',
 								group: 'internal'
-							},
-							{
-								pattern: '~/constants/**',
-								group: 'internal'
-							},
-							{
-								pattern: './context/**',
-								group: 'sibling',
-								position: 'after'
 							},
 							{
 								pattern: './context',
@@ -296,54 +278,41 @@ export default tseslint
 								position: 'after'
 							},
 							{
-								pattern: './components',
-								group: 'parent'
+								pattern: './context/**',
+								group: 'sibling',
+								position: 'after'
+							},
+							{
+								pattern: './components/',
+								group: 'sibling'
 							},
 							{
 								pattern: './components/**',
-								group: 'parent'
-							},
-							{
-								pattern: './',
-								group: 'parent'
-							},
-							{
-								pattern: './components/**.style',
-								group: 'external',
-								position: 'before'
-							},
-							{
-								pattern: './**.style',
-								group: 'external',
-								position: 'before'
-							},
-							{
-								pattern: './helpers',
-								group: 'external'
-							},
-							{
-								pattern: './helpers/**',
-								group: 'external'
+								group: 'sibling'
 							},
 							{
 								pattern: './hooks',
-								group: 'external',
-								position: 'after'
+								group: 'sibling'
 							},
 							{
 								pattern: './hooks/**',
-								group: 'external',
-								position: 'after'
+								group: 'sibling'
 							},
 							{
-								pattern: './constants',
-								group: 'type',
-								position: 'before'
+								pattern: './helpers',
+								group: 'sibling'
 							},
 							{
-								pattern: './constants/**',
-								group: 'type',
-								position: 'before'
+								pattern: './helpers/**',
+								group: 'sibling'
+							},
+							{
+								pattern: './utils',
+								group: 'sibling'
+							},
+							{
+								pattern: './utils/**',
+								group: 'sibling'
 							},
 							{
 								pattern: './types',
@@ -352,15 +321,58 @@ export default tseslint
 							},
 							{
 								pattern: '@types/**',
-								group: 'type'
+								group: 'type',
+								position: 'before'
 							},
 							{
-								pattern: '~/**/**.css',
-								group: 'object'
+								pattern: 'react-icons/*',
+								group: 'object',
+								position: 'before'
+							},
+							{
+								pattern: '@storybook',
+								group: 'object',
+								position: 'before'
+							},
+							{
+								pattern: '@storybook/*',
+								group: 'object',
+								position: 'before'
+							},
+							{
+								pattern: '@assets/*',
+								group: 'object',
+								position: 'before'
+							},
+							{
+								pattern: '~/assets/*',
+								group: 'object',
+								position: 'before'
+							},
+							{
+								pattern: '@/**/**.scss',
+								group: 'object',
+								position: 'after'
+							},
+							{
+								pattern: '@/**/**.css',
+								group: 'object',
+								position: 'after'
+							},
+							{
+								pattern: './**/**.scss',
+								group: 'object',
+								position: 'after'
 							},
 							{
 								pattern: './**/**.css',
-								group: 'object'
+								group: 'object',
+								position: 'after'
+							},
+							{
+								pattern: '../**',
+								group: 'unknown',
+								position: 'after'
 							}
 						],
 						pathGroupsExcludedImportTypes: ['react'],
@@ -369,7 +381,15 @@ export default tseslint
 							order: 'asc',
 							caseInsensitive: true
 						},
-						groups: ['builtin', 'internal', 'index', 'sibling', 'parent', 'external', 'type', 'object']
+						groups: [
+							'builtin',
+							'index',
+							['internal', 'external'],
+							['parent', 'sibling'],
+							'type',
+							'object',
+							'unknown'
+						]
 					}
 				]
 			}
