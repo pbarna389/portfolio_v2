@@ -178,16 +178,15 @@ $desktop-width: 1280px;
 		border: none;
 		transition: all 0.3s linear;
 		margin: $margin-bot;
-
-		@include phones {
-			align-self: center;
-		}
-
 		font-family: var(--font-title);
 		font-size: 1.2rem;
 
 		&:hover {
 			color: rgb(85 229 72);
+		}
+
+		@include phones {
+			align-self: center;
 		}
 	}
 }
