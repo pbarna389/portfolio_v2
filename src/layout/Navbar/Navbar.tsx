@@ -1,9 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import './Navbar.scss'
 
 export const Navbar = () => {
 	const [show, setShow] = useState(true)
+
+	const prevValue = useRef(0)
+
+	useEffect(() => {
+		const checkForThreshold = () => {
+			setShow(window.scrollY <= prevValue.current)
+
+			prevValue.current = window.scrollY
+		}
+
+		window.addEventListener('scroll', checkForThreshold)
+
+		return () => window.removeEventListener('scroll', checkForThreshold)
+	}, [])
 
 	return (
 		<header>
@@ -25,10 +39,6 @@ export const Navbar = () => {
 					</span>
 				</div>
 			</div>
-			<span
-				className={show ? 'hamburger-menu menu-show' : 'hamburger-menu'}
-				onClick={() => setShow(!show)!}
-			></span>
 		</header>
 	)
 }
