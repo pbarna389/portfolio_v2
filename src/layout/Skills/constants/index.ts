@@ -1,1 +1,1 @@
-export { options, skills } from './constants'
+export { options } from './constants'

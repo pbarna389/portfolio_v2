@@ -1,3 +1,5 @@
+import type { SkillsValues } from '@types'
+
 export type SkillCardProps = {
-	skill: string
+	skill: SkillsValues
 }

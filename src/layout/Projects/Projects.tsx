@@ -1,23 +1,17 @@
 import { useState } from 'react'
 
-import { useProjectContext } from '@context'
-import { Modal, Parallax, ProjectCard } from '@components'
+import { Parallax } from '@components'
 import { useIntersectionObserver } from '@hooks'
+import { observerThreshold } from '@constants'
+
+import { ProjectCard } from './components'
+import { projects } from './constants'
 
 import './Projects.scss'
 
 export const Projects = () => {
-	const options = {
-		threshold: 0.2
-	}
-
 	const [visibility, setVisibility] = useState<boolean>(false)
-	const [elementRef] = useIntersectionObserver(setVisibility, options)
-
-	const {
-		projects,
-		modalStates: [modalState]
-	} = useProjectContext()
+	const [elementRef] = useIntersectionObserver(setVisibility, observerThreshold)
 
 	return (
 		<section
@@ -31,10 +25,9 @@ export const Projects = () => {
 			/>
 			<div className="grid-wrapper">
 				{projects.map((project) => (
-					<ProjectCard key={project.id} name={project.name} finished={project.finished} />
+					<ProjectCard key={project.id} data={project} finished={project.finished} />
 				))}
 			</div>
-			{modalState ? <Modal key={'modal'} /> : null}
 		</section>
 	)
 }

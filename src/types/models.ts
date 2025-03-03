@@ -3,5 +3,7 @@ export type Project = {
 	finished: boolean
 	readonly id: number
 	name: string
-	pics: string[] | null
+	pics: string[]
 }
+
+export type SkillsValues = Capitalize<'html5' | 'css3' | 'js' | 'react' | 'sass' | 'ts'>
