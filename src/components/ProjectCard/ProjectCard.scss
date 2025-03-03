@@ -49,6 +49,9 @@ $desktop-width: 1280px;
 	}
 
 	&:nth-child(3n) {
+		opacity: 0;
+		translate: 400px;
+
 		@include phones {
 			translate: 0;
 		}
@@ -56,9 +59,6 @@ $desktop-width: 1280px;
 		@include tablets {
 			translate: 0;
 		}
-
-		opacity: 0;
-		translate: 400px;
 	}
 
 	h4 {
