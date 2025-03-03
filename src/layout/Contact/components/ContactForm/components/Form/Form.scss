@@ -1,14 +1,11 @@
 $desk-width: 20rem;
-$desk-padding: 0.5rem;
-$bg-shadow-color: rgb(13 13 13);
-
-$desk-font-size: 1.3rem;
-
 $phone-width: 320px;
 $phone-button: 362px;
 $tablet-width: 640px;
 $tablet-contact-width-max: 1010px;
 $desktop-width: 1280px;
+
+$desk-padding: 0.5rem;
 
 @mixin phones {
 	@media (min-width: #{$phone-width}) and (max-width: #{$tablet-width}) {
@@ -40,44 +37,55 @@ $desktop-width: 1280px;
 	}
 }
 
-.contact-wrapper {
+form {
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	gap: 15rem;
-	height: max-content;
+	justify-content: center;
+	flex-direction: column;
+	translate: -800px;
+	opacity: 0;
+	filter: blur(10px);
+	transition: all 0.7s ease-in;
 
 	@include phones {
-		flex-direction: column-reverse;
-		gap: 5rem;
+		width: $phone-width;
 	}
 
-	@include tablets {
-		gap: 5rem;
+	input {
+		height: 1.5rem;
 	}
 
-	@include tabletContact {
-		flex-direction: column-reverse;
+	textarea {
+		resize: none;
+		height: 10rem;
+		margin-bottom: 1rem;
 	}
 
-	.contact-text {
-		width: 35%;
-		font-size: $desk-font-size;
-		translate: 100px;
-		filter: blur(10px);
-		opacity: 0;
-		transition: all 0.7s ease-in;
+	input,
+	textarea {
+		width: $desk-width;
+		padding: $desk-padding;
+		border: 1px solid black;
+		border-radius: 10px;
+		transition: all 0.3s linear;
+		font-size: 1.1rem;
 
-		@include phones {
-			padding: 0.5rem;
-			width: 100%;
-			font-size: $desk-font-size;
-			translate: 0;
+		&:focus {
+			border: 3px solid black;
+			font-size: 1.2rem;
 		}
 
-		@include tablets {
-			translate: 0;
-			font-size: $desk-font-size * 0.8;
+		@include phones {
+			width: $phone-width * 0.8;
+		}
+	}
+
+	.contact-btn {
+		margin-top: 1rem;
+		width: $desk-width + 2rem;
+
+		@include phones {
+			width: $phone-width - 20px;
 		}
 	}
 }
