@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
-import { ContactForm, Parallax } from '@components'
+import { Parallax } from '@components'
 import { useIntersectionObserver } from '@hooks'
 
+import { ContactForm } from './components'
 import { options } from './constants'
 
 import './Contact.scss'
