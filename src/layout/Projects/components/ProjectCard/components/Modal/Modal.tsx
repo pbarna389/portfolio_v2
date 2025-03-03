@@ -1,28 +1,17 @@
 import { createPortal } from 'react-dom'
 
+import { Gallery } from './components'
 import type { ModalProps } from './types'
 
-import inDev01 from '../../../../../../assets/Images/placeholder/01.jpg'
-
-import Arrow from './assets/Scroll-Arrow.svg'
+import { handleModalChanges } from '../../utils'
 
 import './Modal.scss'
 
-export const Modal = ({ setModalState, data }: ModalProps) => {
+export const Modal = ({ data, showModal, setModalState, setShowModal }: ModalProps) => {
 	return createPortal(
 		<div className="modal-wrapper">
-			<div className={`modal`}>
-				<div className={`gallery`}>
-					<img src={inDev01} />
-				</div>
-				<div className="btn-wrapper">
-					<button type="button" className="btn-prev">
-						<img src={Arrow} style={{ height: '2rem', width: '2rem', rotate: '180deg' }} />
-					</button>
-					<button type="button" className="btn-next">
-						<img src={Arrow} style={{ height: '2rem', width: '2rem' }} />
-					</button>
-				</div>
+			<div className={`modal ${showModal ? 'fade-in' : ''}`}>
+				<Gallery pics={data.pics} />
 
 				<h2>{data.name}</h2>
 				<h3>Description: </h3>
@@ -31,7 +20,7 @@ export const Modal = ({ setModalState, data }: ModalProps) => {
 				<button
 					type="button"
 					className="close-modal btn"
-					onClick={() => setModalState((prev) => !prev)}
+					onClick={() => handleModalChanges(setShowModal, setModalState)}
 				>
 					Close
 				</button>

@@ -1,0 +1,94 @@
+$phone-width: 320px;
+$phone-button: 362px;
+$tablet-width: 640px;
+$desktop-width: 1280px;
+
+@mixin phones {
+	@media (min-width: #{$phone-width}) and (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
+@mixin phonesButton {
+	@media (min-width: #{$phone-width}) and (max-width: #{$phone-button}) {
+		@content;
+	}
+}
+
+@mixin tablets {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin tabletContact {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$tablet-contact-width-max}) {
+		@content;
+	}
+}
+
+@mixin desktops {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	overflow: hidden;
+	transition: opacity 0.35s linear;
+	max-height: max-content;
+
+	button[type='button'] {
+		transition: opacity 0.25s ease-in-out;
+
+		&:disabled {
+			opacity: 0.25;
+		}
+	}
+
+	.arrow {
+		width: 2rem;
+		height: 2rem;
+		transition: scale 0.25s ease-in-out;
+
+		&.reverse {
+			transform: rotate(180deg);
+		}
+
+		&:hover {
+			scale: 1.25;
+		}
+	}
+
+	@include phones {
+		max-width: 60%;
+		max-height: 15rem;
+	}
+
+	@include tablets {
+		max-height: 20rem;
+		max-width: 60%;
+	}
+
+	img {
+		max-height: fit-content;
+		max-width: 40vh;
+		object-fit: cover;
+		object-position: center;
+		opacity: 1;
+		transition: opacity 0.25s ease-in-out;
+
+		&.fade-in {
+			opacity: 0;
+		}
+
+		&:hover {
+			scale: none;
+		}
+	}
+}
