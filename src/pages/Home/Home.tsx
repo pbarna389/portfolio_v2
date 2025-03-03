@@ -1,5 +1,4 @@
 import { ProjectProvider } from '@context'
-
 import { Contact, Introduction, Projects, Skills } from '@layout'
 
 export const Home = () => {

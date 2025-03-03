@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react'
 
 import { useProjectContext } from '@context'
 
-import './Modal.scss'
-
 import inDev01 from './assets/01.jpg'
 import inDev02 from './assets/02.jpg'
 import inDev03 from './assets/03.jpg'
 import Arrow from './assets/Scroll-Arrow.svg'
+
+import './Modal.scss'
 
 export const Modal = () => {
 	const [fadeIn, setFadeIn] = useState<boolean>(false)

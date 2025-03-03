@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
 
-import emailjs from 'emailjs-com'
+import { ReCAPTCHA } from 'react-google-recaptcha'
+
+import emailjs from '@emailjs/browser'
+
+import {
+	CAPTCHA_KEY,
+	EMAIL_JS_SERVICE_ID,
+	EMAIL_JS_TEMPLATE_ID,
+	EMAIL_JS_USER_ID
+} from '@constants'
 
 import { ContactFormError } from './components'
 
 import './ContactForm.scss'
-
-const captchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY
-const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID
-const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID
-const USER_ID = import.meta.env.VITE_EMAIL_PUBLIC_KEY
 
 export const ContactForm = () => {
 	const [isCaptchaSucessful, setIsCaptchaSuccessful] = useState<boolean>(false)
@@ -57,7 +60,7 @@ export const ContactForm = () => {
 	}, [firstName, secondName, email, message])
 
 	const handleSubmit = (e: React.FormEvent) => {
-		console.log(SERVICE_ID, TEMPLATE_ID, USER_ID)
+		console.log(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, EMAIL_JS_USER_ID)
 		e.preventDefault()
 
 		if (
@@ -72,14 +75,16 @@ export const ContactForm = () => {
 				message
 			}
 
-			emailjs.send(SERVICE_ID, TEMPLATE_ID, mailTemplateParam, USER_ID).then(
-				(result) => {
-					console.log(result.text)
-				},
-				(error) => {
-					console.log(error.text)
-				}
-			)
+			emailjs
+				.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, mailTemplateParam, EMAIL_JS_USER_ID)
+				.then(
+					(result) => {
+						console.log(result.text)
+					},
+					(error) => {
+						console.log(error.text)
+					}
+				)
 
 			console.log('IT WORKS')
 		} else {
@@ -210,14 +215,14 @@ export const ContactForm = () => {
 					<ContactFormError message="Type in more than 10 letters!" />
 				)}
 				<ReCAPTCHA
-					sitekey={captchaKey}
+					sitekey={CAPTCHA_KEY}
 					onChange={captchaOnChange}
 					onExpired={handleExpiredChange}
 					theme={'dark'}
 					hl="en-GB"
 				/>
 				<button
-					type="button"
+					type="submit"
 					disabled={(!isCaptchaSucessful && !sendConditions) || !isCaptchaSucessful || !sendConditions}
 					className="btn contact-btn"
 				>

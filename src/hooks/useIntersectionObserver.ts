@@ -12,7 +12,6 @@ export const useIntersectionObserver = (
 
 			if (entry.isIntersecting) {
 				setState(entry.isIntersecting)
-				console.log(entry)
 			}
 		}
 

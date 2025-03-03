@@ -1,11 +1,11 @@
+import type { SkillCardProps } from './types'
+
 import Css3 from '../../assets/SVG/CSS3.svg'
 import Html5 from '../../assets/SVG/HTML5.svg'
 import JS from '../../assets/SVG/JS.svg'
-import SASS from '../../assets/SVG/Sass.svg'
 import ReactLogo from '../../assets/SVG/React.svg'
+import SASS from '../../assets/SVG/Sass.svg'
 import TS from '../../assets/SVG/TS.svg'
-
-import type { SkillCardProps } from './types'
 
 import './SkillCard.scss'
 

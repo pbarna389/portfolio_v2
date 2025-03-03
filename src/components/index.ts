@@ -1,4 +1,4 @@
-export { ContactForm } from './ContanctForm'
+export { ContactForm } from './ContactForm'
 export { IntroText } from './IntroText'
 export { Modal } from './Modal'
 export { Orbit } from './Orbit'

@@ -1,8 +1,8 @@
-import { Home } from '@pages'
+import './assets/Fonts/Revamped-X3q1a.ttf'
 import { Footer } from 'layout/Footer/Footer'
 import { Navbar } from 'layout/Navbar/Navbar'
 
-import './assets/Fonts/Revamped-X3q1a.ttf'
+import { Home } from '@pages'
 
 import './App.scss'
 

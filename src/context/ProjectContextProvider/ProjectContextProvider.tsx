@@ -1,6 +1,9 @@
 import type { PropsWithChildren } from 'react'
-
 import { useState } from 'react'
+
+import type { Project } from '@types'
+
+import { ProjectContext } from './context'
 
 import TodoPicture01 from '../../assets/Images/todo-app/01.jpg'
 import TodoPicture02 from '../../assets/Images/todo-app/02.jpg'
@@ -8,10 +11,6 @@ import TodoPicture03 from '../../assets/Images/todo-app/03.jpg'
 import TodoPicture04 from '../../assets/Images/todo-app/04.jpg'
 import TodoPicture05 from '../../assets/Images/todo-app/05.jpg'
 import TodoPicture06 from '../../assets/Images/todo-app/06.jpg'
-
-import { ProjectContext } from './context'
-
-import type { Project } from '@types'
 
 export const ProjectProvider = ({ children }: PropsWithChildren) => {
 	const [modalState, setModalState] = useState<boolean>(false)
