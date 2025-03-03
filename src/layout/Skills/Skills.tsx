@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 import { Parallax, SkillCard } from '@components'
 import { useIntersectionObserver } from '@hooks'
+import { skills } from '@constants'
 
-import { options, skills } from './constants'
+import { options } from './constants'
 
 import './Skills.scss'
 

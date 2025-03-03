@@ -1,0 +1,1 @@
+export { techImages } from './constants'

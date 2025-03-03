@@ -5,3 +5,5 @@ export type Project = {
 	name: string
 	pics: string[] | null
 }
+
+export type SkillsValues = Capitalize<'html5' | 'css3' | 'js' | 'react' | 'sass' | 'ts'>

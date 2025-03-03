@@ -1,8 +1,6 @@
 export { ContactForm } from './ContactForm'
 export { IntroText } from './IntroText'
-export { Modal } from './Modal'
 export { Orbit } from './Orbit'
 export { Parallax } from './Parallax'
 export { Portrait } from './Portrait'
-export { ProjectCard } from './ProjectCard'
 export { SkillCard } from './SkillCard'

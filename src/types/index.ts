@@ -1,1 +1,1 @@
-export type { Project } from './models'
+export type { Project, SkillsValues } from './models'
