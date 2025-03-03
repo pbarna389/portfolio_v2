@@ -40,23 +40,23 @@ $desktop-width: 1280px;
 	}
 }
 
-.contact-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 15rem;
-	height: max-content;
+.contact-text {
+	width: 35%;
+	font-size: $desk-font-size;
+	translate: 100px;
+	filter: blur(10px);
+	opacity: 0;
+	transition: all 0.7s ease-in;
 
 	@include phones {
-		flex-direction: column-reverse;
-		gap: 5rem;
+		padding: 0.5rem;
+		width: 100%;
+		font-size: $desk-font-size;
+		translate: 0;
 	}
 
 	@include tablets {
-		gap: 5rem;
-	}
-
-	@include tabletContact {
-		flex-direction: column-reverse;
+		translate: 0;
+		font-size: $desk-font-size * 0.8;
 	}
 }
