@@ -9,7 +9,7 @@ import {
 	EMAIL_JS_USER_ID
 } from '@constants'
 
-import { ContactFormError } from '../ContactFormError'
+import { ContactFormError } from './components'
 
 import './Form.scss'
 
