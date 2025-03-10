@@ -16,8 +16,14 @@
 		"prepare": "husky"
 	},
 	"lint-staged": {
-		"**/*.{js,ts,jsx,tsx}": "npm run fix:eslint && npm run lint:eslint",
-		"**/*.{css,scss}": "npm run fix:stylelint && npm run lint:stylelint"
+		"**/*.{js,ts,jsx,tsx}": [
+			"npm run fix:eslint",
+			"npm run lint:eslint"
+		],
+		"**/*.{css,scss}": [
+			"npm run fix:stylelint",
+			"npm run lint:stylelint"
+		]
 	},
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",

@@ -37,46 +37,11 @@ $desk-padding: 0.5rem;
 	}
 }
 
-form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	translate: -800px;
-	opacity: 0;
-	filter: blur(10px);
-	transition: all 0.7s ease-in;
+.contact-btn {
+	margin-top: 1rem;
+	width: $desk-width + 2rem;
 
 	@include phones {
-		width: $phone-width;
-	}
-
-	input {
-		height: 1.5rem;
-	}
-
-	textarea {
-		resize: none;
-		height: 10rem;
-		margin-bottom: 1rem;
-	}
-
-	input,
-	textarea {
-		width: $desk-width;
-		padding: $desk-padding;
-		border: 1px solid black;
-		border-radius: 10px;
-		transition: all 0.3s linear;
-		font-size: 1.1rem;
-
-		&:focus {
-			border: 3px solid black;
-			font-size: 1.2rem;
-		}
-
-		@include phones {
-			width: $phone-width * 0.8;
-		}
+		width: $phone-width - 20px;
 	}
 }

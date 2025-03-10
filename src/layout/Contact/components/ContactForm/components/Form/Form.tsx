@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { FormComponentSelector } from './components'
+import { FormComponentSelector, SubmitBtn } from './components'
 import { onSubmit, schema } from './utils'
 import { formDetails } from './constants'
 
@@ -28,9 +28,7 @@ export const Form = () => {
 					error={errors[referenceName]?.message}
 				/>
 			))}
-			<button type="submit" className="btn contact-btn">
-				Send me a message!
-			</button>
+			<SubmitBtn />
 		</form>
 	)
 }

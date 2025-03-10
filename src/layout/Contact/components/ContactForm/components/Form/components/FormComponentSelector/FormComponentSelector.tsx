@@ -8,7 +8,7 @@ export const FormComponentSelector = ({
 	error,
 	type
 }: FormComponentSelectorProps) => {
-	const formComponentVariants = {
+	return {
 		input: (
 			<Input
 				labelText={labelText}
@@ -25,7 +25,5 @@ export const FormComponentSelector = ({
 				error={error}
 			/>
 		)
-	}
-
-	return formComponentVariants[type]
+	}[type]
 }
