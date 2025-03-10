@@ -1,4 +1,4 @@
-export { ContactForm } from './ContactForm'
+export { ContactFormError } from './ContactFormError'
 export { IntroText } from './IntroText'
 export { Orbit } from './Orbit'
 export { Parallax } from './Parallax'

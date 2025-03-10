@@ -1,0 +1,1 @@
+export { formDetails } from './constants'

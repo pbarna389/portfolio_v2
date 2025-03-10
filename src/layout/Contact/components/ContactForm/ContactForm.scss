@@ -1,0 +1,62 @@
+$desk-width: 20rem;
+$desk-padding: 0.5rem;
+$bg-shadow-color: rgb(13 13 13);
+
+$desk-font-size: 1.3rem;
+
+$phone-width: 320px;
+$phone-button: 362px;
+$tablet-width: 640px;
+$tablet-contact-width-max: 1010px;
+$desktop-width: 1280px;
+
+@mixin phones {
+	@media (min-width: #{$phone-width}) and (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
+@mixin phonesButton {
+	@media (min-width: #{$phone-width}) and (max-width: #{$phone-button}) {
+		@content;
+	}
+}
+
+@mixin tablets {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin tabletContact {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$tablet-contact-width-max}) {
+		@content;
+	}
+}
+
+@mixin desktops {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+.contact-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15rem;
+	height: max-content;
+
+	@include phones {
+		flex-direction: column-reverse;
+		gap: 5rem;
+	}
+
+	@include tablets {
+		gap: 5rem;
+	}
+
+	@include tabletContact {
+		flex-direction: column-reverse;
+	}
+}

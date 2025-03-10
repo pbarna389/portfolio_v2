@@ -41,6 +41,11 @@ html {
 	}
 }
 
+html,
+body {
+	height: max-content;
+}
+
 body {
 	@include phones {
 		width: 100vw;
