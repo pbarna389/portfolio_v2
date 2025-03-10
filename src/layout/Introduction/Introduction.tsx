@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-import { IntroText, Portrait } from '@components'
 import { useIntersectionObserver } from '@hooks'
+
+import { IntroText, Portrait } from './components'
 
 import './Introduction.scss'
 

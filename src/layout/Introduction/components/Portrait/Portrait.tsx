@@ -1,4 +1,4 @@
-import { Orbit } from '@components'
+import { Orbit } from './components'
 
 import './Portrait.scss'
 

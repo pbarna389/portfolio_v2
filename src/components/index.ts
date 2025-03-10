@@ -1,6 +1,3 @@
 export { ContactFormError } from './ContactFormError'
-export { IntroText } from './IntroText'
-export { Orbit } from './Orbit'
 export { Parallax } from './Parallax'
-export { Portrait } from './Portrait'
 export { SkillCard } from './SkillCard'
