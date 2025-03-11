@@ -20,25 +20,23 @@ export const Navbar = () => {
 	}, [])
 
 	return (
-		<header>
-			<div className={show ? 'header-main show' : 'header-main'}>
-				<div className="icon-wrapper">
-					<span>
-						<a href="#intro">Icon</a>
-					</span>
-				</div>
-				<div className="options-wrapper">
-					<span>
-						<a href="#skills">Skills</a>
-					</span>
-					<span>
-						<a href="#projects">Projects</a>
-					</span>
-					<span>
-						<a href="#contact">Contact</a>
-					</span>
-				</div>
+		<nav className={show ? 'header-main show' : 'header-main'}>
+			<div className="icon-wrapper">
+				<span>
+					<a href="#intro">Home</a>
+				</span>
 			</div>
-		</header>
+			<div className="options-wrapper">
+				<span>
+					<a href="#skills">Skills</a>
+				</span>
+				<span>
+					<a href="#projects">Projects</a>
+				</span>
+				<span>
+					<a href="#contact">Contact</a>
+				</span>
+			</div>
+		</nav>
 	)
 }

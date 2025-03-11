@@ -87,18 +87,6 @@ $h1-fontSize: 3.5rem;
 			opacity 0.6s ease-in,
 			filter 0.8s linear;
 		transition-delay: 200ms;
-
-		@include phones {
-			font-size: $desk-font-size * 0.6;
-		}
-
-		@include tablets {
-			font-size: $desk-font-size * 0.8;
-		}
-
-		@include desktops {
-			font-size: $desk-font-size;
-		}
 	}
 }
 
